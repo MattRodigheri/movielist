@@ -1,15 +1,35 @@
-var MovieList = (props) =>
-    <div>
-      <SearchBar />
+// var MovieList = (props) =>
+//     <div>
+//       <SearchBar />
+//       <button>Search</button>
+//       {props.movies.map((movie) =>
+//         <Movie movie={movie}/>
+//       )}
+//     </div>
 
-      {props.movies.map((movie) =>
-        <Movie movie={movie}/>
-      )}
-    </div>
+class MovieList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+render() {
+    return (
+      <div>
+        <SearchBar />
+        <button>Search</button>
+        {movies.map((movie) =>
+          <Movie movie={movie}/>
+        )}
+      </div>
+    )
+  }
+}
 
 //SearchBar needs to be within <div>
-
-
+//now that movies are in a class, why am I not using props.movies?
 
 
 // PropTypes tell other developers what `props` a component expects
