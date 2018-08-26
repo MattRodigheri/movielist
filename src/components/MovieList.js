@@ -13,7 +13,16 @@ class MovieList extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addMovie = this.addMovie.bind(this);
 
+  }
+
+  addMovie(event) {
+    this.state.movies.push({title: this.state.value});
+    // this.state.movies.push({title: this.state.value});
+    this.setState({
+      movies: this.state.movies
+    });
   }
 
   handleChange(event) {
@@ -41,6 +50,7 @@ class MovieList extends React.Component {
 
     return (
       <div>
+        <AddMovie add={this.addMovie} inputVal={this.handleChange}/>
         <SearchBar search={this.handleSubmit} inputVal={this.handleChange}/>
         {movies.map((movie) =>
           <Movie movie={movie}/>
