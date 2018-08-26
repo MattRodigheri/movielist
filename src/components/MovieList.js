@@ -42,6 +42,7 @@ class MovieList extends React.Component {
     this.setState({
       movies: matches
     });
+    this.state.value = ''
   }
 
   render() {
